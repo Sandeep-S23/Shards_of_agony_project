@@ -1,0 +1,40 @@
+{% extends "band/base.html" %}
+{% load static %}
+{% block heading %}Shrads Of Agony - Gallery{% endblock %}
+{% block content %}
+	<main class="main-content">
+				<div class="fullwidth-block gallery">
+					<div class="container">
+						<div class="content fullwidth">
+							<br><br>
+							<h2 class="entry-title">Gallery</h2>
+							
+							<div class="filterable-items">
+								<div class="filterable-item band">
+									<a href="{% static 'band/images/img1.jpg' %}"><figure><img src="{% static 'band/images/img1.jpg' %}" alt="gallery 1"></figure></a>
+								</div>
+								<div class="filterable-item band">
+									<a href="{% static 'band/images/img7.jpg' %}"><figure><img src="{% static 'band/images/img7.jpg' %}" alt="gallery 2" width="500px" height="300px"></figure></a>
+								</div>
+								<div class="filterable-item band">
+									<a href="{% static 'band/images/img3.jpg' %}"><figure><img src="{% static 'band/images/img3.jpg' %}" alt="gallery 3" width="500px" height="300px"></figure></a>
+								</div>
+								<div class="filterable-item band">
+									<a href="{% static 'band/images/img4.jpg' %}"><figure><img src="{% static 'band/images/img4.jpg' %}" alt="gallery 4" width="500px" height="300px"></figure></a>
+								</div>
+								<div class="filterable-item band">
+									<a href="{% static 'band/images/img5.jpg' %}"><figure><img src="{% static 'band/images/img5.jpg' %}" alt="gallery 5" width="500px" height="300px"></figure></a>
+								</div>
+								<div class="filterable-item band">
+									<a href="{% static 'band/images/img6.jpg' %}"><figure><img src="{% static 'band/images/img6.jpg' %}" alt="gallery 3" width="500px" height="300px"></figure></a>
+								</div>
+								<div class="filterable-item band">
+									<a href="{% static 'band/images/img2.jpg' %}"><figure><img src="{% static 'band/images/img2.jpg' %}" alt="gallery 4" width="500px" height="300px"></figure></a>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div> <!-- .testimonial-section -->			
+	</main> <!-- .main-content -->
+{% endblock content %}	

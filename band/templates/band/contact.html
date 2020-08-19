@@ -1,0 +1,41 @@
+{% extends "band/base.html" %}
+{% block heading %}Shrads Of Agony - Contact Us{% endblock %}
+{% block content %}
+	<main class="main-content">
+				<div class="fullwidth-block inner-content">
+					<div class="container">
+						<br><br>
+						<h2 class="page-title">Contact Us</h2>
+						<div class="row">
+							<div class="col-md-6">
+								<form action="{% url 'band-contact' %}" class="contact-form" method="post">
+									{% csrf_token %}
+									<input type="text" name="name" placeholder="Your name"..>
+									<input type="text" name="email" placeholder="Email Address..">
+									<input type="text" name="phno" placeholder="Phone Number..">
+									<textarea name="msg" placeholder="Ask Us Anything..."></textarea>
+									<input type="submit" value="Send message">
+								</form>
+							</div>
+							<div class="col-md-6">
+								<div class="map-wrapper">
+									<div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.906461823376!2d77.59648731413526!3d12.977834218254475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae167ada5403cb%3A0x127842fde7c41828!2sChinnaswamy%20Stadium!5e0!3m2!1sen!2sin!4v1577338083031!5m2!1sen!2sin" width="555" height="380" frameborder="0" style="border:0;" allowfullscreen=""></iframe></div>
+									<address>
+										<div class="row">
+											<div class="col-sm-6">
+												<strong>Company Name INC.</strong>
+												<span>40 Sibley St, Detroit</span>
+											</div>
+											<div class="col-sm-6">
+												<a href="mailto:shardsofagony@gmail.com">shardsofagony@gmail.com</a> <br>
+												<!--<a href="tel:532930098891">-->+91 81471 80213<!--</a>-->
+											</div>
+										</div>
+									</address>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> <!-- .testimonial-section -->
+	</main> <!-- .main-content -->
+{% endblock content %}	

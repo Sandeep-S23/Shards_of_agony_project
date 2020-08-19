@@ -1,0 +1,50 @@
+{% extends "band/base.html" %}
+{% load static %}
+{% block content %}
+	<main class="main-content">
+				<div class="fullwidth-block inner-content">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="content">
+									<br><br>
+									<h2 class="entry-title">BOOKINGS</h2>
+									
+									<div class="table-responsive">
+									<table class="table table-bordered table-striped table-dark">
+									  <thead>
+									    <tr>
+
+									      <th scope="col">Name</th>
+									      <th scope="col">Phone</th>
+									      <th scope="col">Email</th>
+									      <th scope="col">Address</th>
+									      <th scope="col">Date</th>
+									      <th scope="col">Schedule</th>
+									      <th scope="col">Message</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+									    <tr>
+									      <td>{{ your_name }}</td>
+									      <td>{{ your_phone }}</td>
+									      <td>{{ your_email }}</td>
+									      <td>{{ your_address }}</td>
+									      <td>{{ your_date }}</td>
+									      <td>{{ your_schedule }}</td>
+									      <td>{{ your_message }}</td>
+									    </tr>
+									  </tbody>
+									</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>			
+						
+	</main> <!-- .main-content -->
+{% endblock content %}	
+
+
+

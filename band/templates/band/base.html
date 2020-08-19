@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- Bootstrap CSS -->
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		
+		<title>{% block heading %}Shrads Of Agony{% endblock %}</title>
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
+		<link href="{% static 'band/fonts/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="{% static 'band/style.css' %}">
+        <link rel='icon' href="{% static 'band/images/bandfacicon.ico' %}" type='image/x-icon'/ >
+
+	</head>
+
+	<body class="header-collapse">
+		
+		<div id="site-content">
+			<header class="site-header">
+				<div class="container">
+					<a href="{% url 'band-home' %}" id="branding">
+						<!-- <img src="{% static 'band/images/logo_transparent_new.png' %}" alt="Site Title"> -->
+						<img src="{% static 'band/images/shards_logo_orange.png' %}" width="125px" height="60px"  alt="Shrads Of Agony">
+						<!-- <small class="site-description">Classic rock band</small> -->
+					</a> <!-- #branding -->
+					
+					<nav class="main-navigation">
+						<button type="button" class="toggle-menu"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							
+							<li class="menu-item"><a href="{% url 'band-home' %}">Home</a></li>
+							<li class="menu-item"><a href="{% url 'band-about' %}">About</a></li>
+							<li class="menu-item"><a href="{% url 'band-gallery' %}">Gallery</a></li>
+							<li class="menu-item"><a href="{% url 'band-download' %}">Download</a></li>
+							<li class="menu-item"><a href="{% url 'band-blog' %}">Blog</a></li>
+							<li class="menu-item"><a href="{% url 'band-contact' %}">Contact</a></li>
+						</ul> <!-- .menu -->
+					</nav> <!-- .main-navigation -->
+					<div class="mobile-menu"></div>
+				</div>
+			</header> <!-- .site-header -->
+			
+			
+			
+			<main class="main-content">
+
+
+				{% block content %}{% endblock %}
+
+						
+			</main> <!-- .main-content -->
+
+			<footer class="site-footer">
+				<div class="container">
+					<!-- <img src="{% static 'band/images/logo_transparent_new.png' %}" alt="Site Name"> -->
+					<img src="{% static 'band/images/shards_logo_orange.png' %}" width="125px" height="60px"  alt="Shrads Of Agony">
+					
+					<address>
+						<p>495 Brainard St. Detroit, MI 48201 <br>+91 81471 80213 <br> <a href="mailto:www.shardsofagony@gmail.com">www.shardsofagony@gmail.com</a></p> 
+					</address> 
+					
+					
+					<div class="social-links">
+						<a href="https://www.facebook.com/Shards-Of-Agony-1750354981750272/?fb_dtsg_ag=Adyweqfr6ZX8NKX4GYEU6UkKEnMepHiHANNKhr9d5nZlCA%3AAdzqgeK9odPQosZHUTEPNkIRzf2BIKU-dDgbB_R-j6YBJw"><i class="fa fa-facebook-square"></i></a>
+						<a href="#"><i class="fa fa-twitter"></i></a>
+						<a href="#"><i class="fa fa-google-plus"></i></a>
+						<a href="https://www.instagram.com/shards_of_agony"><i class="fa fa-instagram"></i></a>
+						
+					</div> <!-- .social-links -->
+					
+					<p class="copy">Copyright 2020 Shrads Of Agony. All right reserved</p>
+				</div>
+			</footer> <!-- .site-footer -->
+
+		</div> <!-- #site-content -->
+
+
+		<!-- Optional JavaScript -->
+	    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+		<script src="{% static 'band/jquery-1.11.1.min.js' %}"></script>		
+		<script src="{% static 'band/plugins.js' %}"></script>
+		<script src="{% static 'band/app.js' %}"></script>
+		
+	</body>
+
+</html>

@@ -1,0 +1,46 @@
+{% extends "band/base.html" %}
+{% load static %}
+{% block heading %}Shrads Of Agony - Download{% endblock %}
+{% block content %}
+	<main class="main-content">
+				<div class="fullwidth-block download">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-10">
+								<br><br>
+								<h2 class="page-title">Our Music</h2>
+
+								<div class="item">
+									{% for song in songs %}
+										<h3 class="item-title">{{ song.title }}</h3>
+										<span class="year">{{ song.released_date|date:'M j, Y' }}</span>
+										<!-- <a href="#" class="button small primary">Download</a>
+										<a href="#" class="button small secondary">Listen to</a> -->
+										<figure>
+											
+										    <audio
+										        controls
+										        src="{{ song.song_file.url }}" id="player">
+										            Your browser does not support the
+										            <code>audio</code> element.
+										    </audio>
+										    <div style="float: right;">
+												<a href="{{ song.song_file.url }}" class="button large primary button cut-corner mt-2" download target="_blank" style="text-decoration: none;">Download</a>
+												</div>
+										</figure>
+										 <hr style="height:1px;border-width:0;color:gray;background-color:gray"> 
+									{% endfor %}
+									<!-- <div class="social-share">
+										<span>Share:</span>
+										<a href="#"><i class="fa fa-facebook"></i></a>
+										<a href="#"><i class="fa fa-twitter"></i></a>
+										<a href="#"><i class="fa fa-google-plus"></i></a>
+										<a href="#"><i class="fa fa-pinterest"></i></a>
+									</div> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> <!-- .testimonial-section -->
+	</main> <!-- .main-content -->
+{% endblock content %}	
