@@ -123,9 +123,15 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587 # worked with '587' as well
-EMAIL_HOST_USER = '<mail-id with less secure apps enabled>'
-EMAIL_HOST_PASSWORD = '<mail-id-password>'
-EMAIL_USE_TLS = True
-#EMAIL_USE_SSL = False
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587 # worked with '587' as well
+# EMAIL_HOST_USER = '<mail-id with less secure apps enabled>'
+# EMAIL_HOST_PASSWORD = '<mail-id-password>'
+# EMAIL_USE_TLS = True
+# #EMAIL_USE_SSL = False
+
+#Messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}

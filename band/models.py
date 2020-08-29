@@ -15,4 +15,18 @@ class Contact(models.Model):
 	message = models.TextField(blank=True)
 
 	def __str__(self):
-		return self.name		
+		return self.name
+
+class Booking(models.Model):
+	name = models.CharField(max_length=200)
+	email = models.EmailField(max_length=100)
+	phone = models.CharField(max_length=20)
+	addr = models.TextField(blank=True)
+	schedule = models.CharField(max_length=100)
+	book_date = models.CharField(max_length=100)
+	message = models.TextField(blank=True)
+
+	def __str__(self):
+		return self.name
+
+

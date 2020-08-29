@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
-from . models import Song, Contact
+from . models import Song, Contact, Booking
+from django.contrib import messages
 
 
 def home(request):
@@ -32,18 +33,19 @@ def contact(request):
 
 		contact = Contact(name=name, email=email, phone=phone, message=message)
 		contact.save()
+		messages.success(request, 'Thanks for showing interest, will get back to you soon.')
 
-		try:
-			# sending an email
-			mail_msg = "Name : " + name + "\nEmail : " + email + "\nPhone Number : " + phone + "\nMessage : " + message
-			send_mail(
-				'You have a new mail from: ' + name, # subject
-				mail_msg, # message
-				email, # from mail
-				['<email-id1>','<email-id2>'], # to mail
-				)
-		except Exception:		
-			return render(request, 'band/contact.html', {'title': 'Contact', 'error': "Mail not sent, but your data has been saved in database and our team will contact you soon."})
+		# try:
+		# 	# sending an email
+		# 	mail_msg = "Name : " + name + "\nEmail : " + email + "\nPhone Number : " + phone + "\nMessage : " + message
+		# 	send_mail(
+		# 		'You have a new mail from: ' + name, # subject
+		# 		mail_msg, # message
+		# 		email, # from mail
+		# 		['<email-id1>','<email-id2>'], # to mail
+		# 		)
+		# except Exception:		
+		return render(request, 'band/contact.html', {'title': 'Contact', 'error': "Mail not sent, but your data has been saved in database and our team will contact you soon."})
 
 	else:	
 		return render(request, 'band/contact.html', {'title': 'Contact'})
@@ -58,6 +60,11 @@ def booking(request):
 		your_schedule = request.POST['your-schedule']
 		your_date = request.POST['your-date']
 		your_message = request.POST['your-message']
+
+		book = Booking(name=your_name, email=your_email, phone=your_phone, addr=your_address, schedule=your_schedule, book_date=your_date, message=your_message)
+		book.save()
+		messages.success(request, 'Thanks for showing interest, will get back to you soon.')
+
 
 		# sending an email
 		msg = "Name : " + your_name + "\nPhone Number : " + your_phone + "\nEmail ID : " + your_email + "\nAddress : " + your_address + "\nRequested Time : " + your_schedule + "\nDate : " + your_date + "\nMessage/Reason of visit : " + your_message
